@@ -1,0 +1,195 @@
+{
+  "principal": [
+    {
+      "produtos": {
+        "1": {
+          "descricao": "produtoEditado",
+          "foto": "",
+          "nome": "produto3",
+          "preco": 14,
+          "promocao": true
+        },
+        "2": {
+          "descricao": "lçafjljsjslçjsfas987896",
+          "foto": "",
+          "nome": "produto30",
+          "preco": 167,
+          "promocao": true
+        },
+        "-O-ST5-bZSVvyc_5CHx1": {
+          "descricao": "rtewsfs",
+          "foto": "",
+          "nome": "teste",
+          "preco": 34,
+          "promocao": false
+        },
+        "-O-STW_grU3_kPmtuw-6": {
+          "descricao": "tesdfasdf",
+          "foto": "",
+          "nome": "teste",
+          "preco": 1234,
+          "promocao": false
+        },
+        "-O-STdk16CTcJyLZz9ei": {
+          "descricao": "tesdfasdf",
+          "foto": "",
+          "nome": "teste",
+          "preco": 1234,
+          "promocao": false
+        },
+        "-O-SUwOhkVFLAJn4P2PB": {
+          "descricao": "teste5",
+          "foto": "",
+          "nome": "teste5",
+          "preco": 12,
+          "promocao": true
+        },
+        "-O-SXNdtDk1i4TGOzzL3": {
+          "descricao": "tese",
+          "foto": "",
+          "nome": "teste",
+          "preco": 12,
+          "promocao": true
+        },
+        "-O-SYEeMbFXY9puYeCd7": {
+          "descricao": "teste",
+          "foto": "",
+          "nome": "teste",
+          "preco": 3,
+          "promocao": true
+        },
+        "-O-SYZCan899YsKVkd0q": {
+          "descricao": "4",
+          "foto": "",
+          "nome": "teste",
+          "preco": 3,
+          "promocao": true
+        },
+        "-O-WwHs5QSAcL_oJcBIx": {
+          "descricao": "teste6",
+          "foto": "",
+          "nome": "teste6",
+          "preco": 100,
+          "promocao": true
+        },
+        "-O-cDeOkc83dXw0n9HfI": {
+          "descricao": "Celular da marca Apple.",
+          "foto": "imgCelular2.jpeg",
+          "nome": "Celular Iphone",
+          "preco": 3000,
+          "promocao": true
+        },
+        "-O-cDwo9TC-OU1GBSgOn": {
+          "descricao": "Celular da marca Samsung.",
+          "foto": "imgCelular3.jpeg",
+          "nome": "Celular Samsung",
+          "preco": 2500,
+          "promocao": false
+        }
+      }
+    },
+    {
+      "usuarios": {
+        "DNgBtqHP39cUin9bJYANn5M0hyH2": {
+          "userType": "Administrador"
+        },
+        "SbvNDPUQIZfrbLB0KM7XfTXsh282": {
+          "userType": "comum"
+        },
+        "XZRxfHJVRpNq7yWNAV1eKdlLqgJ2": {
+          "userType": "comum"
+        },
+        "b35AYaMAGKZaeUIDvpZbCPNL2T42": {
+          "userType": "comum"
+        }
+      }
+    },
+    {
+      "carrinho": {
+        "0": {
+          "itemId": [1, 2, 3, 4],
+          "login": "DNgBtqHP39cUin9bJYANn5M0hyH2"
+        },
+        "DNgBtqHP39cUin9bJYANn5M0hyH2": {
+          "itemId": {
+            "-O-XGBGfs9cieNK-qfe9": {
+              "id": "1"
+            },
+            "-O-XGBm75rs43wEEN9cI": {
+              "id": "1"
+            },
+            "-O-XGC4NEpayRVhxhk9o": {
+              "id": "1"
+            },
+            "-O-Y2D6kcWit5NhR9ICD": {
+              "id": "2"
+            },
+            "-O-Y2GLZBlqfz2QrrTTN": {
+              "id": "1"
+            },
+            "-O-Y2GM_13U86vEswEjD": {
+              "id": "1"
+            },
+            "-O-Y2HhbtMV14NNZDy1n": {
+              "id": "-O-STdk16CTcJyLZz9ei"
+            },
+            "-O-c_vGhTVISXl2GFT6c": {
+              "id": "1"
+            }
+          }
+        },
+        "SbvNDPUQIZfrbLB0KM7XfTXsh282": {
+          "itemId": {
+            "-O-XP-7Hq_x7nrOGl_Rs": {
+              "id": "1"
+            },
+            "-O-XP-ONX8w3fvkw-Y1y": {
+              "id": "2"
+            },
+            "-O-XP-hkYk1iLIOjsjsy": {
+              "id": "-O-ST5-bZSVvyc_5CHx1"
+            },
+            "-O-XP-uW_mviJ1uoPY6z": {
+              "id": "-O-STW_grU3_kPmtuw-6"
+            },
+            "-O-XSEJH__9dh5EJyoYs": {
+              "id": "-O-SUwOhkVFLAJn4P2PB"
+            },
+            "-O-XSEXc9mRLpcmNrgpv": {
+              "id": "-O-STdk16CTcJyLZz9ei"
+            },
+            "-O-XVimbZVVDhmJGoTn-": {
+              "id": "2"
+            },
+            "-O-Y-z4GXzWCuCJfBZwC": {
+              "id": "-O-SYZCan899YsKVkd0q"
+            },
+            "-O-Y0C-8eLL9my_n1EK3": {
+              "id": "-O-STdk16CTcJyLZz9ei"
+            }
+          }
+        },
+        "XZRxfHJVRpNq7yWNAV1eKdlLqgJ2": {
+          "login": "XZRxfHJVRpNq7yWNAV1eKdlLqgJ2"
+        },
+        "b35AYaMAGKZaeUIDvpZbCPNL2T42": {
+          "itemId": {
+            "-O-NUZUe608nw8iXS-Xc": {
+              "id": "1"
+            }
+          }
+        }
+      }
+    },
+    {
+      "reclamacoes": {
+        "0": {
+          "userUid": "0",
+          "email": "email@gmail.com",
+          "reclamacao": "reclamacao",
+          "tipoReclamacao": "Site"
+        }
+      }
+    }
+  ]
+}

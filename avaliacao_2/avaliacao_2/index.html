@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+  <head id="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>e-Commerce</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <script type="module" src="js/index.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900"
+      rel="stylesheet"
+    />
+
+    <script defer src="/__/firebase/10.12.2/firebase-app-compat.js"></script>
+
+    <script defer src="/__/firebase/10.12.2/firebase-auth-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/10.12.2/firebase-database-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.12.2/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.12.2/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.12.2/firebase-messaging-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.12.2/firebase-storage-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.12.2/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.12.2/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.12.2/firebase-performance-compat.js"
+    ></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+
+  <body id="body">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light"
+      id="nav"
+    >
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Tela inicial <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item" id="btnAbrirFaleConosco">
+            <a class="nav-link hidden" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">
+              <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 75 75 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233q.27.015.537.036c2.568.189 5.093.744 7.463 1.993zm-9 6.215v-4.13a95 95 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A61 61 0 0 1 4 10.065m-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68 68 0 0 0-1.722-.082z"/>
+            </svg>Fale Conosco</a>
+          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="btnCarrinhoAbrir" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+          </svg>Carrinho</a>
+        </li>
+        <li class="nav-item" id="btnTelaCriarProduto">
+          <a class="nav-link hidden" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+          </svg>Adicionar</a>
+        </li>
+        <li class="nav-item" id="btnVoltarBusca" class="voltar-busca">
+          
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          
+          <input
+            class="form-control mr-sm-2"
+            id="txtBusca"
+            type="buscar"
+            placeholder="buscar"
+            aria-label="Search"
+          />
+          <a class="nav-link voltar-busca" id="btnVoltarBusca" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg></a>
+          
+          <button class="btn btn-outline-success my-2 my-sm-0" id="btnPesquisar" type="button">
+            buscar
+          </button>
+        </form>
+        <button type="button" class="btn btn-outline-success my-2 my-sm-0 logOut"  id="btnLogOut" ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-escape"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8.538 1.02a.5.5 0 1 0-.076.998 6 6 0 1 1-6.445 6.444.5.5 0 0 0-.997.076A7 7 0 1 0 8.538 1.02"
+          />
+          <path
+            d="M7.096 7.828a.5.5 0 0 0 .707-.707L2.707 2.025h2.768a.5.5 0 1 0 0-1H1.5a.5.5 0 0 0-.5.5V5.5a.5.5 0 0 0 1 0V2.732z"
+          />
+        </svg>Sair</button>
+      </div>
+    </nav>
+    <div id="criarProdutoPopup" class="popup-produto" style="display: none">
+      <div class="main-produto">
+        <h1>Criar</h1>
+        <h3>Adicionar Produto novo</h3>
+        <button type="button" id="btnSairProduto" class="btn-sair-produto"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+        </svg></button>
+        <form action="none">
+          <label for="nomeProduto"> Nome: </label>
+          <input
+            type="text"
+            id="nomeProduto"
+            name="nomeProduto"
+            placeholder="Digite o nome"
+            required
+          />
+          <label for="precoProduto"> Preço: </label>
+          <input
+            type="text"
+            id="precoProduto"
+            name="precoProduto"
+            placeholder="Digite o preço"
+            required
+          />
+
+          <label for="descricao">Descrição:</label>
+          <textarea type="text"
+          id="descricaoProduto"
+          name="descricaoProduto"
+          placeholder="Digite a descrição"
+          required rows="2" cols="50"></textarea>
+
+          <label for="fotoProduto">Coloque a foto</label>
+          <input type="file" id="fotoProduto"  name="fotoProduto" >
+
+          <fieldset>
+            <legend>Produto em promoção?</legend>
+          <input type="radio" class="radio" id="sim" name="promocao" value="sim">
+          <label for="sim">Sim</label>
+          <input type="radio" class="radio" id="nao" name="promocao" value="nao">
+          <label for="nao">Não</label>
+
+          <button type="button" id="btnCriarProduto">Criar</button>
+        </fieldset>
+      </div>
+    </div>
+
+    <div id="editarProdutoPopup" class="popup-produto" style="display: none">
+      <div class="main-produto">
+        <h1>Editar</h1>
+        <h3>Editar Produto</h3>
+        <button type="button" id="btnEditarSairProduto" class="btn-sair-produto"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+        </svg></button>
+        <form action="none">
+          <label for="nomeProduto"> Nome: </label>
+          <input
+            type="text"
+            id="editarNomeProduto"
+            name="nomeProduto"
+            placeholder="Digite o nome"
+            required
+          />
+          <label for="precoProduto"> Preço: </label>
+          <input
+            type="text"
+            id="editarPrecoProduto"
+            name="precoProduto"
+            placeholder="Digite o preço"
+            required
+          />
+
+          <label for="descricao">Descrição:</label>
+          <textarea type="text"
+          id="editarDescricaoProduto"
+          name="descricaoProduto"
+          placeholder="Digite a descrição"
+          required rows="2" cols="50"></textarea>
+
+          <label for="fotoProduto">Coloque a foto</label>
+          <input type="file" id="editarFotoProduto" class='editarFotoProduto' name="fotoProduto" >
+
+          <fieldset>
+            <legend>Produto em promoção?</legend>
+          <input type="radio" class="radioEditar" id="editarPromocaoSim" name="promocao" value="sim">
+          <label for="sim">Sim</label>
+          <input type="radio" class="radioEditar" id="editarPromocaoNao" name="promocao" value="nao">
+          <label for="nao">Não</label>
+
+          <button type="button" id="btnEditarProduto">Editar</button>
+        </fieldset>
+      </div>
+    </div>  
+    <div id="faleConosco" class="popup-produto" style="display: none">
+      <div class="main-fale-conosco">
+        <h1>Fale conosco</h1>
+        <h3>Por favor preencha os campos</h3>
+        <button type="button" id="btnSairReclamacao" class="btn-sair-produto"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+        </svg></button>
+        <form action="none">
+          <label for="email"> Email: </label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Digite um email de contato"
+            required
+          />
+
+          <label for="reclamacao"> Reclamação: </label>
+          <textarea type="text"
+          id="reclamacao"
+            name="reclamacao"
+            placeholder="Escreva a reclamação"
+            required
+          required rows="2" cols="50"></textarea>
+
+          <fieldset>
+            <legend>Tipo de reclamação</legend>
+          <input type="radio" class="radioProblema" id="problemaSite" name="radioProblema" value="problemaSite">
+          <label for="problemaSite">Problemas com o site</label>
+          <input type="radio" class="radioProblema" id="problemaProduto" name="radioProblema" value="problemaProduto">
+          <label for="problemaProduto">Problemas com produtos</label>
+
+          <button type="button" id="btnReclamacao">Enviar</button>
+        </fieldset>
+      </div>
+    </div>  
+    <main id="main">
+      <section class="py-5">
+        <div class="container px- px-lg-5 mt-5">
+          <div
+            id="localProdutos"
+            class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-md-4 justify-content-center localProdutos"
+            
+          ></div>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center bg-body-tertiary" id="footer">
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <!-- Twitter -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <!-- Google -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <!-- Linkedin -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <!-- Github -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2024 Copyright:
+        <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <div id="login-popup" class="popup" style="display: none">
+      <div class="main">
+        <h1>Login</h1>
+        <h3>Entre com as credenciais de login</h3>
+        <form action="">
+          <label for="email"> Email: </label>
+          <input
+            type="text"
+            id="emailLogin"
+            name="email"
+            placeholder="Digite o email"
+            required
+          />
+
+          <label for="senha"> Senha: </label>
+          <input
+            type="password"
+            id="senhaLogin"
+            name="senha"
+            placeholder="Digite a sua senha"
+            required
+          />
+
+          <div class="wrap">
+            <button type="button" class="button-popup" id="btnAuthUsuarioSenha">Entrar</button>
+            <button type="button"class="button-popup" id="btnAuthGoogle" return false >
+              Entrar com o google
+            </button>
+          </div>
+        </form>
+        <p>
+          Não está registrado?
+          <a href="#" style="text-decoration: none" id="linkCriarConta">
+            Criar uma conta
+          </a>
+        </p>
+      </div>
+    </div>
+    <div id="cadastro-popup" class="popup" style="display: none">
+      <div class="main">
+        <h1>Cadastro</h1>
+        <h3>Preencha suas credênciais para criar um cadastro</h3>
+        <form action="">
+          <label for="email"> Email: </label>
+          <input
+            type="text"
+            id="emailCadastro"
+            name="email"
+            placeholder="Digite o email"
+            required
+          />
+
+          <label for="senha"> Senha: </label>
+          <input
+            type="password"
+            id="senhaCadastro"
+            name="senha"
+            placeholder="Digite a sua senha"
+            required
+          />
+
+          <div class="wrap">
+            <button type="button" class="button-popup" id="btnCancelarCadastro">Cancelar</button>
+            <button type="button"class="button-popup" id="btnCadastro"  return false >
+              Cadastrar
+            </button>
+          </div>
+        </form>
+        <p>
+          Já tem uma conta?
+          <a href="#" style="text-decoration: none" id="linkLogin">Entrar</a>
+        </p>
+      </div>
+    </div>
+
+    <section class="carrinho" id="telaCarrinho" style="display: none">
+      <div class="body">
+        <div class="CartContainer" >
+          <div class="Header">
+            <h3 class="Heading">Carrinho</h3>
+            <h5 class="Action">Remover todos</h5>
+            <h5 class="Action" id="btnSairCarrinho">Sair</h5>
+          </div>
+          <div id="containerCarrinho" class="container-carrinho"></div>
+
+          <hr />
+          <div class="checkout">
+            <div class="total">
+              <div>
+                <div class="Subtotal">Sub-Total</div>
+                <div class="items">2 items</div>
+              </div>
+              <div class="total-amount">$6.18</div>
+            </div>
+            <button class="button">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
